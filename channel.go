@@ -74,8 +74,7 @@ func (c Channel) inputCallback(input Callback) {
 		if wrapper.hook.Action(input) {
 			c.log.WithField("hook", wrapper.hook.Name()).Debug("Served by hook")
 			break
-		} else {
-			c.log.WithField("hook", wrapper.hook.Name()).Debug("Not served by hook")
 		}
+		c.log.WithField("hook", wrapper.hook.Name()).Debug("Not served by hook")
 	}
 }
